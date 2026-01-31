@@ -9,5 +9,19 @@ def add_student(students):
              'active':True}
     students.append(student)
 
+def show_all_students (students):
+    for student in students:
+        student_formatted = f"Id: {student['id']}, Name: {student['name']}, Age: {student['age']}"
+        #Formatting grades
+        grades_formatted = ''
+        for grade in student["grades"]:
+            grades_formatted += "\t"+grade
+        student_formatted += f" Grades: {grades_formatted}"
+        
+        if student["active"]==False:
+            student_formatted+=' -Dropped out'
 
+        print(student_formatted)
+
+        
 
