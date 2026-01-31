@@ -9,7 +9,7 @@ def add_student(students):
              'active':True}
     students.append(student)
 
-def show_all_students (students):
+def show_students (students):
     for student in students:
         student_formatted = f"Id: {student['id']}, Name: {student['name']}, Age: {student['age']}"
         #Formatting grades
@@ -22,6 +22,14 @@ def show_all_students (students):
             student_formatted+=' -Dropped out'
 
         print(student_formatted)
+
+def find_student_name(students,student_name):
+    same_name=[]
+    for student in students:
+        if(student['name'] == student_name):
+            same_name.append(student)
+    return same_name
+
 
         
 
