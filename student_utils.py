@@ -15,7 +15,7 @@ def show_students (students):
         #Formatting grades
         grades_formatted = ''
         for grade in student["grades"]:
-            grades_formatted += "\t"+grade
+            grades_formatted += "\t"+str(grade)
         student_formatted += f" Grades: {grades_formatted}"
         
         if student["active"]==False:
@@ -23,13 +23,53 @@ def show_students (students):
 
         print(student_formatted)
 
-def find_student_name(students,student_name):
-    same_name=[]
-    for student in students:
-        if(student['name'] == student_name):
-            same_name.append(student)
-    return same_name
 
+# students = [], property = string, value = string
+def find_student_property(students, property, value):
+
+    if property not in ["name","age", "id","active"]:
+        print("The property passed was not exisiting")
+        return
+    
+    if property == "id":
+        value = int(value)
+
+    if property == "active":
+        value = bool(value)
+    
+    result = []
+
+    for student in students:
+        if student[property] == value:
+            result.append(student)
+
+    return result
+
+#students-list,id_students-string
+def delete_student(students,id_students):
+    student_l=find_student_property(students,'id',id_students)
+    student=student_l[0]
+    if student not in students:
+        print('Student doesnt exist')
+        return False
+    student['active']=False
+    return True
+
+def add_grade(students,grade,id_students):
+    student_l=find_student_property(students,'id',id_students)
+    student=student_l[0]
+    if student not in students:
+        print('Student doesnt exist')
+        return False
+    grade=int(grade)
+    student['grades'].append(grade)
+    return True
+
+
+    
+
+    
+    
 
         
 
