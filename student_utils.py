@@ -69,19 +69,29 @@ def average_grade(student):
     sum=0
     for grade in student['grades']:
         sum+=grade
+
     return sum/len(student['grades'])
     
+def sortStudentsAverageGrade(students, best=True):
+    array = []
+    for student in students:
+        studentIdAverageGrade = {
+            "student": student,
+            "averageGrade": average_grade(student)
+        }
+        array.append(studentIdAverageGrade)
 
-def best_3_students(student)
+    sortedStudents = sorted(array, key=lambda x: x["averageGrade"], reverse=best)
 
+    students = []
+    for studentAverageGrade in sortedStudents:
+        students.append(studentAverageGrade["student"])
 
+    return students
 
+def pickFirstStudents(students, n):
+    pickedStudents = []
+    for i in range(n):
+        pickedStudents.append(students[i])
 
-
-    
-
-    
-    
-
-        
-
+    return pickedStudents

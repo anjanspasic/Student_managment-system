@@ -1,7 +1,7 @@
 import data
 import student_utils
 
-functions='1️⃣ -Add student\n2️⃣ -Show all students\n3️⃣ -Find student by name\n4️⃣ -Delete student\n5️⃣ -Show 3 best students by grade\n6️⃣ -Show 3 worst students by grade\n7️⃣ -Show all student that have bigger grade than\n8️⃣-Add grade'
+functions='1️⃣ -Add student\n2️⃣ -Show all students\n3️⃣ -Find student by name\n4️⃣ -Delete student\n5️⃣ -Show 3 best students by grade\n6️⃣ -Show 3 worst students by grade\n7️⃣ -Show all student that have bigger grade than\n8️⃣-Add grade\n'
 
 while True:
     actions=input(functions)
@@ -25,7 +25,9 @@ while True:
         else:
             print('Student wasnt deleted')
     if actions=='5':
-        print(data.students)
+        sortedStudents = student_utils.sortStudentsAverageGrade(data.students)
+        pickedStudents = student_utils.pickFirstStudents(sortedStudents, 3)
+        student_utils.show_students(pickedStudents)
     if actions=='6':
         pass
     if actions=='7':
@@ -38,7 +40,6 @@ while True:
             print('You have succesfuly added the grade')
         else:
             print('Grade wasnt added.')
-
 
 
 
