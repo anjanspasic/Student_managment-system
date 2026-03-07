@@ -25,7 +25,7 @@ while True:
         else:
             print('Student wasnt deleted')
     if actions=='5':
-        pass
+        print(data.students)
     if actions=='6':
         pass
     if actions=='7':

@@ -1,1 +1,1 @@
-students=[]
+students=[{'name': 'aaa', 'age': '12', 'grades': [3, 2], 'id': 1, 'active': True}, {'name': 'sss', 'age': '23', 'grades': [4, 4], 'id': 2, 'active': True}, {'name': 'fff', 'age': '34', 'grades': [5, 5], 'id': 3, 'active': True}]

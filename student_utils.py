@@ -65,6 +65,18 @@ def add_grade(students,grade,id_students):
     student['grades'].append(grade)
     return True
 
+def average_grade(student):
+    sum=0
+    for grade in student['grades']:
+        sum+=grade
+    return sum/len(student['grades'])
+    
+
+def best_3_students(student)
+
+
+
+
 
     
 
