@@ -95,3 +95,13 @@ def pickFirstStudents(students, n):
         pickedStudents.append(students[i])
 
     return pickedStudents
+
+def biggerGrade(students):
+    bigger_grade_list=[]
+    bigger_grade=int(input('Which grade do you want to sort by?'))
+    for student in students:
+        average=average_grade(student)
+        if average>bigger_grade:
+            bigger_grade_list.append(student)
+    return bigger_grade_list  
+
